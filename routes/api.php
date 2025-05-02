@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\Manufacturer\ManufacturerController;
 use App\Http\Controllers\Api\Vehicle\VehicleController;
-use App\Http\Controllers\UserController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,14 +12,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::get('vehicle',VehicleController::class);
-Route::resource('users', UserController::class);
+Route::get('manufacturer',ManufacturerController::class);
 
-Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
 
-    Route::post('login', [AuthController::class,'login']);
-    Route::post('logout', [AuthController::class,'logout']);
-    Route::post('refresh',[AuthController::class,'refresh']);
-    Route::post('me', [AuthController::class,'me']);
-
-});
 
