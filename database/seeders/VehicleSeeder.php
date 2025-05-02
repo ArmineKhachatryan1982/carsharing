@@ -28,6 +28,13 @@ class VehicleSeeder extends Seeder
                 'color'=>'blue',
                 'year' => 2023,
             ],
+            [
+                'manufacturer_id' => 3,
+                'brand_id' => 3,
+                'car_model_id' => 2,
+                'color'=>'white',
+                'year' => 2022,
+            ],
         ];
 
         foreach ($vehicles as $vehicle) {
